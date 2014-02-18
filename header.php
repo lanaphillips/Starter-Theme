@@ -4,7 +4,7 @@
 <!--[if IE 7 ]>    <html class="ie ie7 ie-lt10 ie-lt9 ie-lt8 no-js" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 ie-lt10 ie-lt9 no-js" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" <?php language_attributes(); ?> ><!--<![endif]-->
 <!-- the "no-js" class is for Modernizr. --> 
 
 <head>
@@ -44,17 +44,17 @@
 			}
 	   ?>
 	</title>
-	<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="<?php get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<!-- JS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-	<script src="<?php bloginfo('template_directory'); ?>/js/html5shiv.js" type="text/javascript"></script>
-	<script src="<?php bloginfo('template_directory'); ?>/js/theme.js" type="text/javascript"></script>
+	<script src="<?php get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
+	<script src="<?php get_template_directory_uri(); ?>/js/theme.js" type="text/javascript"></script>
 	
 	<!-- CSS -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 
 	<!-- Comments -->
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
