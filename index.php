@@ -1,107 +1,101 @@
 <?php get_header(); ?>
-
-<main id="content" role="main">
-<div class="wrapper">
 	
-	<div class="main">
+<div class="main">
 
-		<?php
-			// Why is this here?
-			// Well, index.php is the last and default template when
-			// all else fails. The following vars and if statement
-			// are used to give the section an appropriate class name
-			// based on the name of the page. Overkill, but I'm happy.
-			$page_url  = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-			$page_slug  = explode("/", $page_url);
-			$page_name = $page_slug[1];
-			if ( $page_name == '' ) {
-				$page_name = 'home';
-			}
-		?>
-		<section class="<?php echo $page_name; ?>">
+	<?php
+		// Why is this here?
+		// Well, index.php is the last and default template when
+		// all else fails. The following vars and if statement
+		// are used to give the section an appropriate class name
+		// based on the name of the page. Overkill, but I'm happy.
+		$page_url  = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		$page_slug  = explode("/", $page_url);
+		$page_name = $page_slug[1];
+		if ( $page_name == '' ) {
+			$page_name = 'home';
+		}
+	?>
+	<section class="<?php echo $page_name; ?>">
 
-			<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-				<header>
+			<header>
 
-					<h1 class="title"><?php echo ucwords( str_replace( '-', ' ', $page_name ) ); ?></h1>
+				<h1 class="title"><?php echo ucwords( str_replace( '-', ' ', $page_name ) ); ?></h1>
 
-				</header>
+			</header>
 
-				<ul class="listing">
+			<ul class="listing">
 
-					<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php
-							// Thumbail?
-							if ( has_post_thumbnail()) { 
-								$figure = 'has-figure'; 
-							} else { 
-								$figure = 'no-figure'; 
-							}
-						?>
+					<?php
+						// Thumbail?
+						if ( has_post_thumbnail()) { 
+							$figure = 'has-figure'; 
+						} else { 
+							$figure = 'no-figure'; 
+						}
+					?>
 
-						<li id="post-<?php the_ID(); ?>" <?php post_class( $figure ) ?> >
+					<li id="post-<?php the_ID(); ?>" <?php post_class( $figure ) ?> >
 
-							<article>
+						<article>
 
-								<?php if ( has_post_thumbnail() ) : ?>
-								<figure>
+							<?php if ( has_post_thumbnail() ) : ?>
+							<figure>
 
-									<?php the_post_thumbnail(); ?>
+								<?php the_post_thumbnail(); ?>
 
-								</figure>
-								<?php endif; ?>
+							</figure>
+							<?php endif; ?>
 
-								<header>
+							<header>
 
-									<h2 class="title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+								<h2 class="title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 
-								</header>
+							</header>
 
-								<div class="entry">
+							<div class="entry">
 
-									<?php the_content(); ?>
+								<?php the_content(); ?>
 
-								</div>
+							</div>
 
-								<footer>
+							<footer>
 
-									<?php get_template_part('/inc/meta.php' ); ?>
+								<?php get_template_part('/inc/meta.php' ); ?>
 
-								</footer>
+							</footer>
 
-							</article>
+						</article>
 
-						</li>
+					</li>
 
-					<?php endwhile; ?>
+				<?php endwhile; ?>
 
-				</ul><!-- .listing -->
+			</ul><!-- .listing -->
 
-				<footer>
+			<footer>
 
-					<?php get_template_part('/inc/nav.php' ); ?>
+				<?php get_template_part('/inc/nav.php' ); ?>
 
-				</footer>
+			</footer>
 
-			<?php else : ?>
+		<?php else : ?>
 
-				<header>
+			<header>
 
-					<h1 class="title">No Posts Here!</h1>
+				<h1 class="title">No Posts Here!</h1>
 
-				</header>
+			</header>
 
-			<?php endif; ?>
+		<?php endif; ?>
 
-		</section>
+	</section>
 
-	</div><!-- .main -->
+</div><!-- .main -->
 
-	<?php get_sidebar(); ?>
-	
-</div>
-</main>
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

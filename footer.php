@@ -1,3 +1,6 @@
+</div>
+</main>
+
 <footer id="footer" role="contentinfo">
 <div class="wrapper">
 

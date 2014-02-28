@@ -1,77 +1,71 @@
 <?php get_header(); ?>
-
-<main id="content" role="main">
-<div class="wrapper">
 	
-	<div class="main">
+<div class="main">
 
-		<section class="search">
+	<section class="search">
 
-			<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-				<header>
+			<header>
 
-					<h1 class="title">Search Results</h1>
+				<h1 class="title">Search Results</h1>
 
-				</header>
+			</header>
 
-				<ul class="listing">
+			<ul class="listing">
 
-					<?php while (have_posts()) : the_post(); ?>
+				<?php while (have_posts()) : the_post(); ?>
 
-						<li <?php post_class() ?> id="post-<?php the_ID(); ?>">
+					<li <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-							<article>
+						<article>
 
-								<header>
+							<header>
 
-									<h2 class="title"><?php the_title(); ?></h2>
+								<h2 class="title"><?php the_title(); ?></h2>
 
-								</header>
+							</header>
 
-								<div class="entry">
+							<div class="entry">
 
-									<?php the_excerpt(); ?>
+								<?php the_excerpt(); ?>
 
-								</div>
+							</div>
 
-								<footer>
+							<footer>
 
-									<?php get_template_part('/inc/meta.php' ); ?>
+								<?php get_template_part('/inc/meta.php' ); ?>
 
-								</footer>
+							</footer>
 
-							</article>
+						</article>
 
-						</li>
+					</li>
 
-					<?php endwhile; ?>
+				<?php endwhile; ?>
 
-				</ul><!-- .listing -->
+			</ul><!-- .listing -->
 
-				<footer>
+			<footer>
 
-					<?php get_template_part('/inc/nav.php' ); ?>
+				<?php get_template_part('/inc/nav.php' ); ?>
 
-				</footer>
+			</footer>
 
-			<?php else : ?>
+		<?php else : ?>
 
-				<header>
+			<header>
 
-					<h1 class="title">No Search Results Here</h1>
+				<h1 class="title">No Search Results Here</h1>
 
-				</header>
+			</header>
 
-			<?php endif; ?>
+		<?php endif; ?>
 
-		</section>
+	</section>
 
-	</div><!-- .main -->
+</div><!-- .main -->
 
-	<?php get_sidebar(); ?>
-	
-</div>
-</main>
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
