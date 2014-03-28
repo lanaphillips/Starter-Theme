@@ -48,7 +48,7 @@
 
 			<footer>
 
-				<?php get_template_part('/inc/nav.php' ); ?>
+				<?php get_template_part( 'inc/content', 'pagination' ); ?>
 
 			</footer>
 

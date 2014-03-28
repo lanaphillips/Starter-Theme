@@ -44,17 +44,17 @@
 			}
 	   ?>
 	</title>
-	<link rel="shortcut icon" href="<?php get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<!-- JS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-	<script src="<?php get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
-	<script src="<?php get_template_directory_uri(); ?>/js/theme.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/theme.js" type="text/javascript"></script>
 	
 	<!-- CSS -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="<?php get_stylesheet_uri(); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 
 	<!-- Comments -->
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>

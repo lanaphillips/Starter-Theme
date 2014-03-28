@@ -33,7 +33,7 @@
 
 				<h1 class="title"><?php the_title(); ?></h1>
 
-				<?php get_template_part( '/inc/meta.php' ); ?>
+				<?php get_template_part( 'inc/content', 'meta' ); ?>
 
 			</header>
 

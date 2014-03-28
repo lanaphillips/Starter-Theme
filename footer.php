@@ -4,7 +4,7 @@
 <footer id="footer" role="contentinfo">
 <div class="wrapper">
 
-		&copy; <?php bloginfo('name'); echo " "; echo date("Y"); ?>
+	&copy; <?php bloginfo('name'); echo " "; echo date("Y"); ?>
 		
 </div>
 </footer>

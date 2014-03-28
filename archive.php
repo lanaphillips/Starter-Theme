@@ -64,7 +64,7 @@
 
 							<footer>
 
-								<?php get_template_part('/inc/meta.php' ); ?>
+								<?php get_template_part( 'inc/content', 'meta' ); ?>
 
 							</footer>
 
@@ -78,7 +78,7 @@
 
 			<footer>
 
-				<?php get_template_part('/inc/nav.php' ); ?>
+				<?php get_template_part( 'inc/content', 'pagination' ); ?>
 
 			</footer>
 

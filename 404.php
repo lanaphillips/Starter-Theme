@@ -12,7 +12,7 @@
 
 		<div class="entry">
 
-			<p>What on earth were you looking for? What URL did you type in? Maybe a typo? Try searching for what you're looking for instead on the right.</p>
+			<p>What on earth were you looking for? What URL did you type in? Maybe a typo? Try the nav.</p>
 
 		</div>
 
