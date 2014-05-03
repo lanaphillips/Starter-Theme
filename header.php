@@ -20,36 +20,36 @@
 	   <?php
 	   		// If is tag/archive
 			if ( function_exists('is_tag') && is_tag() ) {
-				single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; 
+				single_tag_title("Tag Archive for &quot;"); echo '&quot; | '; 
 			} elseif ( is_archive() ) {
-				wp_title(''); echo ' Archive - '; 
+				wp_title(''); echo ' Archive | '; 
 			} elseif ( is_search() ) {
-				echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; 
-			} elseif ( !( is_404() ) && ( is_single() ) || ( is_page() ) ) {
-				wp_title(''); echo ' - '; 
-			} elseif ( is_404() ) {
-				echo 'Not Found - '; 
-			} 
+				echo 'Search for &quot;'.wp_specialchars($s).'&quot; | '; 
+			}
 
 			// If is Page
-			if ( is_home() ) {
-				bloginfo( 'name' ); echo ' - '; bloginfo('description'); 
+			if ( is_front_page() ) {
+				bloginfo( 'name' ); echo ' | '; bloginfo('description'); 
 			} else {
-				bloginfo( 'name' ); 
+				wp_title(''); echo ' | '; bloginfo( 'name' );
 			} 
 
 			// If is Paged
 			if ( $paged > 1 ) {
-				echo ' - page '. $paged; 
+				echo ' | page '. $paged; 
 			}
 	   ?>
 	</title>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+	<!-- WordPress Inserted Stuff Goes Here -->
+	<?php wp_head(); ?>
+
 	<!-- JS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery/jquery.fitvids.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js" type="text/javascript"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/theme.js" type="text/javascript"></script>
 	
 	<!-- CSS -->
@@ -58,9 +58,6 @@
 
 	<!-- Comments -->
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-
-	<!-- WordPress Inserted Stuff Goes Here -->
-	<?php wp_head(); ?>
 	
 </head>
 

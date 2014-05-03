@@ -1,11 +1,51 @@
 /*----------------------------------------------------------
-    Name:      Theme Scripts
+    Name: Theme Scripts
+    Notes: Certain sections of javascript/jquery only
+           happen on certain pages. 
 ----------------------------------------------------------*/
 
-var parts = location.pathname.split('/');
+var path    = location.pathname.split('/'),
+	page    = path[1] || 'home',
+	section = {};
 
 jQuery(document).ready(function($) {
 
-	$('body').addClass(parts[1] || 'home');
+	function Sections() {
+
+		section.allPages();
+
+		if (section[page] && typeof section[page] === "function") {
+            console.info("loading '" + page + "' section js.");
+            section[page]();
+        }else{
+            console.info("No js for '" + page + "'");
+        }
+
+	}
+
+	section.allPages = function(){
+
+		// Section Page Styles
+		document.body.className += ' ' + page;
+
+		// Am I a touch screen?
+		if (Modernizr.touch) {   
+		    document.body.className += ' has-touch';
+		} else {   
+		    document.body.className += ' no-touch'; 
+		} 
+
+		// Menu Button
+		$('#toggle-menu').on('click', function(e){
+			e.preventDefault();
+			$('#header').toggleClass('nav-active');
+		});
+
+		// Responsive Videos
+		$('#content').fitVids();
+
+	}
+
+	$(Sections);
 
 });
