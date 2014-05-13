@@ -28,13 +28,6 @@ jQuery(document).ready(function($) {
 		// Section Page Styles
 		document.body.className += ' ' + page;
 
-		// Am I a touch screen?
-		if (Modernizr.touch) {   
-		    document.body.className += ' has-touch';
-		} else {   
-		    document.body.className += ' no-touch'; 
-		} 
-
 		// Menu Button
 		$('#toggle-menu').on('click', function(e){
 			e.preventDefault();

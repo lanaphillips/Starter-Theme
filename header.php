@@ -66,7 +66,7 @@
 <header id="header" role="banner">
 <div class="wrapper">
 	
-		<div class="logo"><a href="/"><span><?php bloginfo( 'name' ); ?></span></a></div>
+		<div class="logo"><a href="<?php echo home_url(); ?>"><span><?php bloginfo( 'name' ); ?></span></a></div>
 
 		<nav class="navigation" role="navigation">
 			<a id="toggle-menu" href="#"><span class=""></span></a>
